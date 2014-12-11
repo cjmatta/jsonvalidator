@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-public class Main {
+public class JsonValidator {
     public static void main(String[] args) throws IOException {
         ArrayList<String> jsonFiles = new ArrayList<String>();
 

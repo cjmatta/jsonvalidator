@@ -11,13 +11,13 @@ import java.util.Collections;
 import java.util.List;
 
 public class JsonValidator {
-    public static void main(String[] args) throws IOException {
+    public void run(String[] args) throws IOException {
         ArrayList<String> jsonFiles = new ArrayList<String>();
 
 //        Support System.in as a method for inputting files
         while (System.in.available() > 0) {
             BufferedReader input = new BufferedReader(new InputStreamReader(System.in));
-            String stdInFile = null;
+            String stdInFile;
             while ((stdInFile = input.readLine()) != null) {
                 jsonFiles.add(stdInFile);
             }
@@ -78,5 +78,10 @@ public class JsonValidator {
     private static class Stats {
         Integer parseErrors = 0;
         List<String> errors = new ArrayList<String>();
+    }
+
+    public static void main(String[] args) throws IOException {
+        JsonValidator jsonValidator = new JsonValidator();
+        jsonValidator.run(args);
     }
 }
